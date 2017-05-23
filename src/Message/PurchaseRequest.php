@@ -78,7 +78,7 @@ class PurchaseRequest extends AbstractRequest
             'cancelUrl',
             'notifyUrl'
         );
-        $sign = md5($this->getMerchantId() . ':' . $this->getAmount() . ':' . $this->getPassword() . ':' . $this->getOrderId());
+        $sign = md5($this->getMerchantId() . ':' . $this->getAmount() . ':' . $this->getSecretKey() . ':' . $this->getOrderId());
 
         return [
             'm' => $this->getMerchantId(),
