@@ -1,0 +1,39 @@
+{
+    "name": "davodavodavo3/omnipay-freekassa",
+    "type": "library",
+    "description": "FreeKassa gateway for Omnipay payment processing library",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "freekassa",
+        "purchase"
+    ],
+    "homepage": "https://github.com/davodavodavo3/omnipay-freekassa",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Bidzian",
+            "email": "davodavodav333@gmail.com"
+        }
+    ],
+	"autoload": {
+        "psr-4": {
+            "Omnipay\\FreeKassa\\": "src/"
+        }
+    },
+    "require": {
+        "omnipay/common": "~2.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "~2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
