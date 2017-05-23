@@ -14,12 +14,12 @@ class Gateway extends AbstractGateway
         return 'FreeKassa';
     }
 
-    public function getPurse()
+    public function getMerchantId()
     {
         return $this->getParameter('merchant_id');
     }
 
-    public function setPurse($value)
+    public function setMerchantId($value)
     {
         return $this->setParameter('merchant_id', $value);
     }
