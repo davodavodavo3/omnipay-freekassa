@@ -10,31 +10,31 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     protected $zeroAmountAllowed = false;
 
     /**
-     * Get the purse.
-     * @return string purse
+     * Get the merchant id.
+     * @return string merchant id
      */
-    public function getPurse()
+    public function getMerchantId()
     {
-        return $this->getParameter('purse');
+        return $this->getParameter('merchant_id');
     }
 
     /**
-     * Set the purse.
-     * @param string $purse purse
+     * Set the merchant id.
+     * @param string $merchant_id
      * @return self
      */
-    public function setPurse($value)
+    public function setMerchantId($value)
     {
-        return $this->setParameter('purse', $value);
+        return $this->setParameter('merchant_id', $value);
     }
 
     /**
      * Get the secret key.
      * @return string secret key
      */
-    public function getPassword()
+    public function getSecretKey()
     {
-        return $this->getParameter('secretKey');
+        return $this->getParameter('secret_key');
     }
 
     /**
@@ -42,8 +42,8 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
      * @param string $key secret key
      * @return self
      */
-    public function setPassword($value)
+    public function setSecretKey($value)
     {
-        return $this->setParameter('secretKey', $value);
+        return $this->setParameter('secret_key', $value);
     }
 }

@@ -70,17 +70,22 @@ class PurchaseRequest extends AbstractRequest
     public function getData()
     {
         $this->validate(
-            'purse',
-            'amount', 'currency', 'description',
-            'returnUrl', 'cancelUrl', 'notifyUrl'
+            'merchant_id',
+            'amount',
+            'currency',
+            'description',
+            'returnUrl',
+            'cancelUrl',
+            'notifyUrl'
         );
+        $sign = md5($this->getPurse() . ':' . $this->getAmount() . ':' . $this->getPassword() . ':' . $this->getOrderId());
 
         return [
             'm' => $this->getPurse(),
             'oa' => $this->getAmount(),
             'o' => $this->getOrderId(),
             'i' => strtolower($this->getCurrency()),
-            's' => $this->getSignature(),
+            's' => $sign,
             'lang' => $this->getLanguage(),
             'us_time' => $this->getTime(),
             'us_client' => $this->getClient(),

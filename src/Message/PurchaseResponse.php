@@ -10,7 +10,7 @@ use Omnipay\Common\Message\RedirectResponseInterface;
  */
 class PurchaseResponse extends AbstractResponse implements RedirectResponseInterface
 {
-    protected $_redirect = 'https://www.free-kassa.ru/merchant/cash.php';
+    protected $redirectUrl = 'https://www.free-kassa.ru/merchant/cash.php';
 
     public function isSuccessful()
     {
@@ -24,7 +24,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 
     public function getRedirectUrl()
     {
-        return $this->_redirect . '?' . http_build_query($this->getRedirectData());
+        return $this->redirectUrl . '?' . http_build_query($this->getRedirectData());
     }
 
     public function getRedirectMethod()

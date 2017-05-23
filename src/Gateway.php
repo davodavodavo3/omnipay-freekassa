@@ -16,33 +16,33 @@ class Gateway extends AbstractGateway
 
     public function getPurse()
     {
-        return $this->getParameter('purse');
+        return $this->getParameter('merchant_id');
     }
 
     public function setPurse($value)
     {
-        return $this->setParameter('purse', $value);
+        return $this->setParameter('merchant_id', $value);
     }
 
     public function getSecretKey()
     {
-        return $this->getParameter('secretKey');
+        return $this->getParameter('secret_key');
     }
 
     public function setSecretKey($value)
     {
-        return $this->setParameter('secretKey', $value);
+        return $this->setParameter('secret_key', $value);
     }
 
 	public function getDefaultParameters()
     {
         return [
-            'purse' => '',
-            'secretKey'     => '',
-            'testMode'      => false,
+            'merchant_id'	=> '',
+            'secret_key'	=> '',
+            'testMode'	=> false,
         ];
     }
-	
+
     public function purchase(array $parameters = [])
     {
         return $this->createRequest('\Omnipay\FreeKassa\Message\PurchaseRequest', $parameters);
